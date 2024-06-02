@@ -14,5 +14,5 @@ public:
             COrdnanceSystem::InstallPatches();
             };
         Events::reInitGameEvent += COrdnanceSystem::reInit;
-    };
+    }
 }ordnanceEx;

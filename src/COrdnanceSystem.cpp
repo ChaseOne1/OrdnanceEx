@@ -154,7 +154,6 @@ void COrdnanceSystem::FireUnguidedMissile()
         }
     }
 
-
     int32_t player_slot = CallAndReturn<int32_t, 0x564000, CEntity*>(gs_pVehicle);
     CPad* pad = CPad::GetPad(player_slot);
     pad->StartShake(240, 160u, 0);//magic number too
