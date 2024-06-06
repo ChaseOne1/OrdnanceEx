@@ -43,6 +43,7 @@ The plugin determines whether to give the function by detecting whether there is
 | OEx_rocket | Unguided Missile | Helicopter: Fire (Usually left Alt)<br>Plane: Secondary Fire (Usually left Ctrl) |
 | OEx_missile | Heat-seeking missile | Helicopter: Handbrake + Secondary Fire (Usually Space + Ctrl)<br>Plane: Handbrake + Secondary Fire (Usually Space + Left Ctrl) |
 | OEx_flare | Flare | Helicopter: Horn (Usually CapsLock)<br>Plane: Fire (Usually left Alt) |
+| OEx_disable | Disable the original ordnance system | None |
 
 In addition, the plugin also supports the function of cyclic switching launch position. The method of use is to add a child dummy hierarchy under the **first** missile dummy hierarchy, **with any name**. So pay attention to your hierarchy.  
 This function will select one launch position at a time in order to launch unguided missiles in all dummies with the word `OEx_rocket` in the name or heat-seeking missiles in all dummies with the word `OEx_missile` in the name.  
