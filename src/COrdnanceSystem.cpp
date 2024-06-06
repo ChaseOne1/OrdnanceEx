@@ -42,7 +42,8 @@ void COrdnanceSystem::MyProcessWeapons(injector::reg_pack& regs)
     LoadOrdnanceInfo();
     ProcessOrdnance();
 
-    gs_pVehicle->ProcessWeapons();
+    if (!ms_OrdnanceInfo.Get(gs_pVehicle).flags.disableTheOriginal)
+        gs_pVehicle->ProcessWeapons();
 }
 
 static RwFrame* FindNodeCB(RwFrame* frame, void* oi)
@@ -55,9 +56,10 @@ static RwFrame* FindNodeCB(RwFrame* frame, void* oi)
     COrdnanceInfo& info = *static_cast<COrdnanceInfo*>(oi);
     switch (name[4]) {
     case 'g':   info.guns.push_back(frame);     break;
-    case 'r':   info.rockets.push_back(frame);  if (!info.flags.rockets_cyclic)  info.flags.rockets_cyclic = frame->child; break;
+    case 'r':   info.rockets.push_back(frame);  if (!info.flags.rockets_cyclic)  info.flags.rockets_cyclic = frame->child;  break;
     case 'm':   info.missiles.push_back(frame); if (!info.flags.missiles_cyclic) info.flags.missiles_cyclic = frame->child; break;
     case 'f':   info.flares.push_back(frame);   break;
+    case 'd':   info.flags.disableTheOriginal = true;    break;
     default:    break;
     }
 

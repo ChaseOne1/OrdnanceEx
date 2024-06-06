@@ -15,6 +15,8 @@ struct COrdnanceInfo
     {
         bool processed : 1;
         bool needProcess : 1;
+        bool disableTheOriginal : 1;
+
         bool rockets_cyclic : 1;
         bool missiles_cyclic : 1;
     }flags;
@@ -25,5 +27,6 @@ struct COrdnanceInfo
         flags.needProcess = false;
         flags.rockets_cyclic = false;
         flags.missiles_cyclic = false;
+        flags.disableTheOriginal = false;
     }
 };
