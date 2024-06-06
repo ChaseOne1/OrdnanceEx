@@ -74,7 +74,7 @@ void COrdnanceSystem::LoadOrdnanceInfo()
     RwFrameForAllChildren((RwFrame*)gs_pVehicle->m_pRwObject->parent, FindNodeCB, &oi);
 
     oi.flags.processed = true;
-    oi.flags.needProcess = oi.guns.size() + oi.rockets.size() + oi.missiles.size() + oi.flares.size();
+    oi.flags.needProcess = oi.guns.size() || oi.rockets.size() || oi.missiles.size() || oi.flares.size();
 }
 
 int32_t __fastcall COrdnanceSystem::MyGetPlaneNumGuns(CVehicle* vehicle, int)
