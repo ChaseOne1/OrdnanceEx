@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.0)
-project(OrdnanceEx VERSION 1.0.0 LANGUAGES C CXX)
+project(OrdnanceEx VERSION 1.1.0 LANGUAGES C CXX)
 
 
 add_library(OrdnanceEx SHARED   src/OrdnanceEx.cpp
